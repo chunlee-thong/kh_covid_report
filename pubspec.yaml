@@ -1,5 +1,5 @@
-name: flutter_boiler_plate
-description: A flutter boiler plate code for faster development time
+name: kh_covid_report
+description: A covid report case application specifically for cambodia
 
 version: 1.0.0+1
 
@@ -19,6 +19,7 @@ dependencies:
   shared_preferences: ^0.5.7+3
   ##UI
   cupertino_icons: ^0.1.3
+  google_maps_flutter: ^0.5.28+1
   flutter_launcher_icons: ^0.7.5
   toast: ^0.1.5
   cached_network_image: ^2.2.0+1

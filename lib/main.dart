@@ -2,14 +2,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
+import 'package:jin_widget_helper/jin_widget_helper.dart';
+import 'package:kh_covid_report/api_service/covid_case_api.dart';
 import 'constant/colors.dart';
 import 'pages/splash_page/splash_page.dart';
 
 GetIt getIt = GetIt.instance;
-final navigatorKey = GlobalKey<NavigatorState>();
 
 void registerLocator() {
-  //getIt.registerSingleton<DummyModel>(DummyModel());
+  getIt.registerSingleton<CovidCasesApi>(CovidCasesApi());
 }
 
 void main() {
@@ -27,8 +28,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Boilerplate',
-      navigatorKey: navigatorKey,
+      title: 'KH Covid Report',
+      navigatorKey: JinNavigator.navigatorKey,
       theme: ThemeData(
         primarySwatch: primaryColor,
         accentColor: secondaryColor,
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         EasyLocalization.of(context).delegate,
       ],
       supportedLocales: EasyLocalization.of(context).supportedLocales,
-      locale: EasyLocalization.of(context).locale,
+      locale: Locale("km", "KH"),
       home: SplashScreenPage(),
     );
   }

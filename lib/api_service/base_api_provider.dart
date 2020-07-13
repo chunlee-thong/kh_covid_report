@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
-import 'package:flutter_boiler_plate/api_service/base_http_exception.dart';
+import 'package:kh_covid_report/api_service/base_http_exception.dart';
 import './../constant/app_constant.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 

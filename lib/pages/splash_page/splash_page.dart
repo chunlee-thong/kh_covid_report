@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
+import 'package:kh_covid_report/pages/root_page/root_page.dart';
 import '../../constant/colors.dart';
-import '../home_page/home_page.dart';
 
 class SplashScreenPage extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class SplashScreenPage extends StatefulWidget {
 class _SplashScreenPageState extends State<SplashScreenPage> {
   void onSplashing() async {
     await Future.delayed(const Duration(seconds: 1));
-    PageNavigator.pushReplacement(context, MyHomePage());
+    PageNavigator.pushReplacement(context, RootPage());
   }
 
   @override

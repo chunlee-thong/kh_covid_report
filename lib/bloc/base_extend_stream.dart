@@ -1,6 +1,4 @@
-import 'dart:io';
-
-import 'package:flutter_boiler_plate/api_service/base_http_exception.dart';
+import 'package:kh_covid_report/api_service/base_http_exception.dart';
 import 'package:rxdart/rxdart.dart';
 import 'base_repository.dart';
 
