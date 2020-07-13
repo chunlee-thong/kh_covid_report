@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/pages/province_case_detail_page/province_case_detail_page.dart';
 import 'package:kh_covid_report/widgets/common/case_info_row.dart';
 
@@ -23,12 +24,12 @@ class ProvinceCaseInfoCard extends StatelessWidget {
           children: <Widget>[
             cardHeader(),
             SpaceY(),
-            CaseInfoRow("ករណីថ្មី", "${province.newCase}"),
-            CaseInfoRow("ជាសះស្បើយ", "${province.recovered}"),
-            CaseInfoRow("ជាសះស្បើយថ្មីៗ", "${province.newRecovered}"),
-            CaseInfoRow("ស្លាប់", "${province.deaths}"),
+            CaseInfoRow(LocaleKeys.new_case, "${province.newCase}"),
+            CaseInfoRow(LocaleKeys.recovered, "${province.recovered}"),
+            CaseInfoRow(LocaleKeys.new_recover, "${province.newRecovered}"),
+            CaseInfoRow(LocaleKeys.death, "${province.deaths}"),
             Divider(),
-            CaseInfoRow("សរុប", "${province.cases}"),
+            CaseInfoRow(LocaleKeys.total, "${province.cases}"),
           ],
         ),
       ),

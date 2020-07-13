@@ -1,11 +1,19 @@
 {
-    "status": "Success",
-    "message": "I give this arg {}",
-    "amount": "ten",
-    "title": "New Localization",
-    "horse": "horse",
-    "data": {
-        "name": "Chunlee",
-        "age": "32"
-    }
+  "about_us": "About us",
+  "active_case": "Active case",
+  "cambodia": "Cambodia",
+  "case": "Case",
+  "change_language": "Change Language",
+  "death": "Death",
+  "home": "Home",
+  "last_update": "Last update",
+  "map": "Map",
+  "new_case": "New case",
+  "new_recover": "New recover",
+  "recovered": "Recovered",
+  "report": "Report",
+  "setting": "Setting",
+  "total": "Total",
+  "total_case": "Total Case",
+  "update": "Update"
 }

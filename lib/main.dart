@@ -1,9 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/api_service/covid_case_api.dart';
+import 'package:kh_covid_report/constant/supported_locale.dart';
+
 import 'constant/colors.dart';
 import 'pages/splash_page/splash_page.dart';
 
@@ -18,7 +19,8 @@ void main() {
   return runApp(
     EasyLocalization(
       child: MyApp(),
-      supportedLocales: [Locale('en', 'US'), Locale('km', 'KH')],
+      supportedLocales: [EN_LOCALE, KH_LOCALE],
+      fallbackLocale: EN_LOCALE,
       path: 'resources/language',
     ),
   );
@@ -36,13 +38,9 @@ class MyApp extends StatelessWidget {
         fontFamily: "GoogleSans",
       ),
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        EasyLocalization.of(context).delegate,
-      ],
-      supportedLocales: EasyLocalization.of(context).supportedLocales,
-      locale: Locale("km", "KH"),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       home: SplashScreenPage(),
     );
   }

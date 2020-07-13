@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/resource_path.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:provider/provider.dart';
-import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/utils/datetime_utils.dart';
+import 'package:provider/provider.dart';
 
 class HomeHeader extends StatelessWidget {
   @override
@@ -32,14 +33,14 @@ class HomeHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text(report.country, style: titleStyle.bold),
+                Text(LocaleKeys.cambodia, style: titleStyle.bold),
                 Text(
-                  "ករណីសរុប: ${report.cases}",
+                  "${LocaleKeys.total_case}: ${report.cases}",
                   style: headerStyle.bold,
                 ),
                 SpaceY(),
                 Text(
-                  "ធ្វើបច្ចុប្បន្នភាពចុងក្រោយ:",
+                  LocaleKeys.last_update,
                   style: normalStyle,
                 ),
                 Text(

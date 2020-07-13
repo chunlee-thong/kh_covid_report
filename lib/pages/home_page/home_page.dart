@@ -1,7 +1,7 @@
-//import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/model/report_model.dart';
 import 'package:kh_covid_report/pages/home_page/widgets/home_header.dart';
 import 'package:kh_covid_report/pages/home_page/widgets/home_info_card.dart';
@@ -15,8 +15,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with AutomaticKeepAliveClientMixin {
+class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
@@ -39,22 +38,22 @@ class _MyHomePageState extends State<MyHomePage>
           ActionButton(
             margin: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             color: primaryColor,
-            child: Text("ធ្វើបច្ចុប្បន្នភាព"),
+            child: Text(LocaleKeys.update),
             textColor: Colors.white,
             onPressed: widget.onRefresh,
           ),
           HomeInfoCard(
-            title: "សំរាកព្យាបាល",
+            title: LocaleKeys.active_case,
             number: report.active,
             animationIndex: 1,
           ),
           HomeInfoCard(
-            title: "ជាសះស្បើយ",
+            title: LocaleKeys.recovered,
             number: report.recovered,
             animationIndex: 2,
           ),
           HomeInfoCard(
-            title: "ករណីស្លាប់",
+            title: LocaleKeys.death,
             number: report.deaths,
             animationIndex: 3,
           ),

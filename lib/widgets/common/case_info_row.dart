@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kh_covid_report/constant/style.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
+import 'package:kh_covid_report/constant/style.dart';
 
 class CaseInfoRow extends StatelessWidget {
   final String title;
@@ -15,7 +16,7 @@ class CaseInfoRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(title),
-          Text("$amount ករណី", style: subtitleStyle.bold),
+          Text("$amount ${LocaleKeys.cases}", style: subtitleStyle.bold),
         ],
       ),
     );
