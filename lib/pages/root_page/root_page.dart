@@ -83,19 +83,19 @@ class _RootPageState extends State<RootPage> {
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text(LocaleKeys.home),
+                title: Text(LocaleKeys.home).tr(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.assessment),
-                title: Text(LocaleKeys.report),
+                title: Text(LocaleKeys.report).tr(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.map),
-                title: Text(LocaleKeys.map),
+                title: Text(LocaleKeys.map).tr(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                title: Text(LocaleKeys.setting),
+                title: Text(LocaleKeys.setting).tr(),
               )
             ],
           ),

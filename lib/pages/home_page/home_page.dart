@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMi
           ActionButton(
             margin: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             color: primaryColor,
-            child: Text(LocaleKeys.update),
+            child: Text(LocaleKeys.update.tr()),
             textColor: Colors.white,
             onPressed: widget.onRefresh,
           ),

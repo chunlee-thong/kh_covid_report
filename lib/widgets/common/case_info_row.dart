@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/localize_key.dart';
@@ -15,8 +16,8 @@ class CaseInfoRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(title),
-          Text("$amount ${LocaleKeys.cases}", style: subtitleStyle.bold),
+          Text(title).tr(),
+          Text("$amount ${LocaleKeys.cases.tr()}", style: subtitleStyle.bold),
         ],
       ),
     );

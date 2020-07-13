@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
@@ -33,14 +34,14 @@ class HomeHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text(LocaleKeys.cambodia, style: titleStyle.bold),
+                Text(LocaleKeys.cambodia.tr(), style: titleStyle.bold),
                 Text(
-                  "${LocaleKeys.total_case}: ${report.cases}",
+                  "${LocaleKeys.total_case.tr()}: ${report.cases}",
                   style: headerStyle.bold,
                 ),
                 SpaceY(),
                 Text(
-                  LocaleKeys.last_update,
+                  LocaleKeys.last_update.tr(),
                   style: normalStyle,
                 ),
                 Text(

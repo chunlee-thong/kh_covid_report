@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
 import 'package:kh_covid_report/widgets/common/case_info_row.dart';
@@ -7,8 +8,7 @@ import 'package:kh_covid_report/widgets/common/case_info_row.dart';
 class ProviceCaseDetailPage extends StatefulWidget {
   final Province province;
 
-  const ProviceCaseDetailPage({Key key, @required this.province})
-      : super(key: key);
+  const ProviceCaseDetailPage({Key key, @required this.province}) : super(key: key);
   @override
   _ProviceCaseDetailPageState createState() => _ProviceCaseDetailPageState();
 }
@@ -41,10 +41,10 @@ class _ProviceCaseDetailPageState extends State<ProviceCaseDetailPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SpaceY(),
-                  CaseInfoRow("ជាសះស្បើយ", nationality.recovered),
-                  CaseInfoRow("ស្លាប់", nationality.deaths.toString()),
+                  CaseInfoRow(LocaleKeys.recovered, nationality.recovered),
+                  CaseInfoRow(LocaleKeys.death, nationality.deaths.toString()),
                   Divider(),
-                  CaseInfoRow("សរុប", nationality.cases),
+                  CaseInfoRow(LocaleKeys.total, nationality.cases),
                 ],
               ),
             ),

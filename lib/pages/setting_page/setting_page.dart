@@ -15,14 +15,14 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.setting),
+        title: Text(LocaleKeys.setting.tr()),
       ),
       body: ListView(
         children: <Widget>[
           ListTile(
             leading: Icon(Icons.info),
             onTap: () => JinNavigator.dialog(AboutAppDialog()),
-            title: Text(LocaleKeys.about_us),
+            title: Text(LocaleKeys.about_us).tr(),
           ),
           ListTile(
             leading: Icon(Icons.language),
@@ -33,7 +33,7 @@ class _SettingPageState extends State<SettingPage> {
                 context.locale = EN_LOCALE;
               }
             },
-            title: Text(LocaleKeys.change_language),
+            title: Text(LocaleKeys.change_language).tr(),
           ),
         ],
       ),
