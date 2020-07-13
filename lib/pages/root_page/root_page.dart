@@ -55,49 +55,58 @@ class _RootPageState extends State<RootPage> {
     return ChangeNotifierProvider(
       create: (_) => BottomNavigationProvider(widget.startPageIndex),
       child: Consumer<BottomNavigationProvider>(
-        builder: (context, state, child) => Scaffold(
-          body: StreamHandler(
-            stream: baseStream.stream,
-            error: (error) => OnErrorWidget(
-              message: error,
-              onRefresh: () => fetchReportCases(),
-            ),
-            ready: (report) => Provider<ReportModel>(
-              create: (_) => report,
-              child: PageView.builder(
-                itemCount: pages.length,
-                controller: state.pageController,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return pages[index];
-                },
+        builder: (context, state, child) => WillPopScope(
+          onWillPop: () async {
+            if (state.currentIndex != 0) {
+              state.changeIndex(0);
+              return false;
+            }
+            return true;
+          },
+          child: Scaffold(
+            body: StreamHandler(
+              stream: baseStream.stream,
+              error: (error) => OnErrorWidget(
+                message: error,
+                onRefresh: () => fetchReportCases(),
+              ),
+              ready: (report) => Provider<ReportModel>(
+                create: (_) => report,
+                child: PageView.builder(
+                  itemCount: pages.length,
+                  controller: state.pageController,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return pages[index];
+                  },
+                ),
               ),
             ),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: state.currentIndex,
-            type: BottomNavigationBarType.fixed,
-            onTap: (index) {
-              state.changeIndex(index);
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                title: Text(LocaleKeys.home).tr(),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.assessment),
-                title: Text(LocaleKeys.report).tr(),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.map),
-                title: Text(LocaleKeys.map).tr(),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                title: Text(LocaleKeys.setting).tr(),
-              )
-            ],
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: state.currentIndex,
+              type: BottomNavigationBarType.fixed,
+              onTap: (index) {
+                state.changeIndex(index);
+              },
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  title: Text(LocaleKeys.home).tr(),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.assessment),
+                  title: Text(LocaleKeys.report).tr(),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.map),
+                  title: Text(LocaleKeys.map).tr(),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  title: Text(LocaleKeys.setting).tr(),
+                )
+              ],
+            ),
           ),
         ),
       ),
