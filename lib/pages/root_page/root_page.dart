@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
-import 'package:kh_covid_report/bloc/base_extend_stream.dart';
+import 'package:kh_covid_report/services/base_extend_stream.dart';
 import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/model/report_model.dart';
 import 'package:kh_covid_report/pages/case_map_page/case_map_page.dart';
@@ -30,9 +30,7 @@ class _RootPageState extends State<RootPage> {
   }
 
   List<Widget> get pages => [
-        MyHomePage(
-          onRefresh: () => fetchReportCases(),
-        ),
+        MyHomePage(onRefresh: () => fetchReportCases()),
         CasesPage(),
         CaseMapPage(),
         SettingPage(),

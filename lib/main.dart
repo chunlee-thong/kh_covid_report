@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KH Covid Report',
+      title: 'Cambodia Covid Report',
       navigatorKey: JinNavigator.navigatorKey,
       theme: ThemeData(
         primarySwatch: primaryColor,

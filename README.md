@@ -2,6 +2,8 @@
 
 ### data provided by: [covid19cambodia](https://covid19cambodia.herokuapp.com/)
 
+### please add your Google map api key to AndroidManifest.xml and AppDelegate.swift
+
 # UI
 
 |                         HomePage                         |                           Report                            |

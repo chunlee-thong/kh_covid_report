@@ -1,6 +1,6 @@
 import 'package:kh_covid_report/api_service/base_http_exception.dart';
+import 'package:kh_covid_report/repository/base_repository.dart';
 import 'package:rxdart/rxdart.dart';
-import 'base_repository.dart';
 
 class BaseStream<T> extends BaseRepository {
   BehaviorSubject<T> controller;
