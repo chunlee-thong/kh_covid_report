@@ -17,6 +17,12 @@ class ReportModel {
   DateTime updated;
   List<Province> provinces;
 
+  double newCases() {
+    List<double> cases =
+        this.provinces.map((p) => p.newCase.toDouble()).toList();
+    return cases.fold(0, (p, c) => p + c);
+  }
+
   factory ReportModel.fromJson(Map<String, dynamic> json) => ReportModel(
         country: json["country"] == null ? null : json["country"],
         cases: json["cases"] == null ? null : json["cases"],
