@@ -25,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage>
     final report = Provider.of<ReportModel>(context);
     return Scaffold(
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: <Widget>[
           HomeHeader(),
           ActionButton(
@@ -34,20 +35,31 @@ class _MyHomePageState extends State<MyHomePage>
             textColor: Colors.white,
             onPressed: widget.onRefresh,
           ),
-          HomeInfoCard(
-            title: LocaleKeys.active_case,
-            number: report.active,
-            animationIndex: 1,
-          ),
-          HomeInfoCard(
-            title: LocaleKeys.recovered,
-            number: report.recovered,
-            animationIndex: 2,
+          if (report.newCases() > 0)
+            HomeInfoCard(
+              title: LocaleKeys.new_case,
+              number: report.newCases().toInt().toString(),
+              animationIndex: 1,
+              isDanger: true,
+            ),
+          Row(
+            children: <Widget>[
+              HomeInfoCard(
+                title: LocaleKeys.active_case,
+                number: report.active,
+                animationIndex: 2,
+              ).expanded,
+              HomeInfoCard(
+                title: LocaleKeys.recovered,
+                number: report.recovered,
+                animationIndex: 3,
+              ).expanded,
+            ],
           ),
           HomeInfoCard(
             title: LocaleKeys.death,
             number: report.deaths,
-            animationIndex: 3,
+            animationIndex: 4,
           ),
         ],
       ),

@@ -27,9 +27,9 @@ class HomeHeader extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 32),
         child: TweenAnimationBuilder(
           duration: Duration(milliseconds: 600),
-          tween: Tween<double>(begin: 0.0, end: 1.0),
-          builder: (_, value, __) => Opacity(
-            opacity: value,
+          tween: Tween<Offset>(begin: Offset(300, 0), end: Offset.zero),
+          builder: (_, value, __) => Transform.translate(
+            offset: value,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -44,6 +44,7 @@ class HomeHeader extends StatelessWidget {
                   LocaleKeys.last_update.tr(),
                   style: normalStyle,
                 ),
+                SpaceY(4),
                 Text(
                   report.updated.customFormat("dd MMM yyyy HH:mm"),
                   style: normalStyle,
