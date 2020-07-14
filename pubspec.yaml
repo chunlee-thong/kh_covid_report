@@ -1,7 +1,7 @@
 name: kh_covid_report
 description: A covid report case application specifically for cambodia
 
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
