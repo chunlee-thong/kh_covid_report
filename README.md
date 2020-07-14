@@ -6,10 +6,14 @@
 
 # UI
 
-|                         HomePage                         |                           Report                            |
+|                         HomePage                         |                          Statistic                          |
 | :------------------------------------------------------: | :---------------------------------------------------------: |
 | <img src="screenshots/Home.jpg" alt="home" width="500"/> | <img src="screenshots/Report.jpg" alt="order" width="500"/> |
 
 |                           Map                           |                           Setting                            |
 | :-----------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="screenshots/Map.jpg" alt="home" width="500"/> | <img src="screenshots/Setting.jpg" alt="order" width="500"/> |
+
+|                           Graph                           |                           Detail                            |
+| :-------------------------------------------------------: | :---------------------------------------------------------: |
+| <img src="screenshots/Graph.jpg" alt="home" width="500"/> | <img src="screenshots/Detail.jpg" alt="order" width="500"/> |
