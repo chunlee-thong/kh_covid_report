@@ -4,12 +4,12 @@ import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/model/report_model.dart';
 import 'package:provider/provider.dart';
 
-class CaseMapPage extends StatefulWidget {
+class StatisticMapPage extends StatefulWidget {
   @override
-  _CaseMapPageState createState() => _CaseMapPageState();
+  _StatisticMapPageState createState() => _StatisticMapPageState();
 }
 
-class _CaseMapPageState extends State<CaseMapPage>
+class _StatisticMapPageState extends State<StatisticMapPage>
     with AfterBuildMixin, AutomaticKeepAliveClientMixin {
   CameraPosition get initialLatLng => CameraPosition(
         target: LatLng(12.5657, 104.9910),
@@ -49,6 +49,7 @@ class _CaseMapPageState extends State<CaseMapPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: GoogleMap(
         initialCameraPosition: initialLatLng,

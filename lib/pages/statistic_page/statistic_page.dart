@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:kh_covid_report/pages/cases_page/widgets/province_case_info_card.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:kh_covid_report/pages/report_graph_page/report_graph_page.dart';
+import 'package:kh_covid_report/pages/statistic_page/widgets/province_report_info_card.dart';
 import 'package:provider/provider.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
 
-class CasesPage extends StatefulWidget {
+class StatisticPage extends StatefulWidget {
   @override
-  _CasesPageState createState() => _CasesPageState();
+  _StatisticPageState createState() => _StatisticPageState();
 }
 
-class _CasesPageState extends State<CasesPage> {
+class _StatisticPageState extends State<StatisticPage> {
   @override
   Widget build(BuildContext context) {
     final report = Provider.of<ReportModel>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: Text(LocaleKeys.statistic.tr()),
+        actions: <Widget>[
+          SmallIconButton(
+            icon: Icon(Icons.assessment),
+            onTap: () => JinNavigator.push(
+                Provider.value(value: report, child: ReportGraphPage())),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -24,7 +37,7 @@ class _CasesPageState extends State<CasesPage> {
                 itemCount: report.provinces.length,
                 itemBuilder: (BuildContext context, int index) {
                   final province = report.provinces[index];
-                  return ProvinceCaseInfoCard(province: province);
+                  return ProvinceReportInfoCard(province: province);
                 },
               ),
             ),

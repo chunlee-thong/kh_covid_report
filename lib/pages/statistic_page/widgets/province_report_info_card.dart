@@ -4,13 +4,13 @@ import 'package:kh_covid_report/constant/colors.dart';
 import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:kh_covid_report/pages/province_case_detail_page/province_case_detail_page.dart';
+import 'package:kh_covid_report/pages/province_statistic_detail_page/province_statistic_detail_page.dart';
 import 'package:kh_covid_report/widgets/common/case_info_row.dart';
 
-class ProvinceCaseInfoCard extends StatelessWidget {
+class ProvinceReportInfoCard extends StatelessWidget {
   final Province province;
 
-  const ProvinceCaseInfoCard({
+  const ProvinceReportInfoCard({
     Key key,
     @required this.province,
   }) : super(key: key);
@@ -41,7 +41,7 @@ class ProvinceCaseInfoCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 12),
       margin: EdgeInsets.zero,
       onTap: () {
-        JinNavigator.push(ProviceCaseDetailPage(province: province));
+        JinNavigator.push(ProviceStatisticDetailPage(province: province));
       },
       icon: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

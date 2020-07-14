@@ -5,15 +5,18 @@ import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
 import 'package:kh_covid_report/widgets/common/case_info_row.dart';
 
-class ProviceCaseDetailPage extends StatefulWidget {
+class ProviceStatisticDetailPage extends StatefulWidget {
   final Province province;
 
-  const ProviceCaseDetailPage({Key key, @required this.province}) : super(key: key);
+  const ProviceStatisticDetailPage({Key key, @required this.province})
+      : super(key: key);
   @override
-  _ProviceCaseDetailPageState createState() => _ProviceCaseDetailPageState();
+  _ProviceStatisticDetailPageState createState() =>
+      _ProviceStatisticDetailPageState();
 }
 
-class _ProviceCaseDetailPageState extends State<ProviceCaseDetailPage> {
+class _ProviceStatisticDetailPageState
+    extends State<ProviceStatisticDetailPage> {
   Province get province => widget.province;
 
   String appBarTitle() {

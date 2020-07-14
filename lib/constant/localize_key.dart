@@ -13,6 +13,7 @@ class LocaleKeys {
   static String recovered = "recovered";
   static String report = "report";
   static String setting = "setting";
+  static String statistic = "statistic";
   static String total = "total";
   static String total_case = "total_case";
   static String update = "update";

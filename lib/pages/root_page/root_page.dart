@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:jin_widget_helper/jin_widget_helper.dart';
+import 'package:kh_covid_report/pages/statistic_map_page/statistic_map_page.dart';
+import 'package:kh_covid_report/pages/statistic_page/statistic_page.dart';
 import 'package:kh_covid_report/services/base_extend_stream.dart';
 import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:kh_covid_report/pages/case_map_page/case_map_page.dart';
-import 'package:kh_covid_report/pages/cases_page/cases_page.dart';
 import 'package:kh_covid_report/pages/home_page/home_page.dart';
 import 'package:kh_covid_report/pages/setting_page/setting_page.dart';
 import 'package:kh_covid_report/provider/bottom_navigation_provider.dart';
@@ -31,8 +31,8 @@ class _RootPageState extends State<RootPage> {
 
   List<Widget> get pages => [
         MyHomePage(onRefresh: () => fetchReportCases()),
-        CasesPage(),
-        CaseMapPage(),
+        StatisticPage(),
+        StatisticMapPage(),
         SettingPage(),
       ];
 
@@ -92,8 +92,8 @@ class _RootPageState extends State<RootPage> {
                   title: Text(LocaleKeys.home).tr(),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.assessment),
-                  title: Text(LocaleKeys.report).tr(),
+                  icon: Icon(Icons.assignment),
+                  title: Text(LocaleKeys.statistic).tr(),
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.map),

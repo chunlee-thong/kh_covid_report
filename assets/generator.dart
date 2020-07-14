@@ -23,5 +23,6 @@ void generateFile() async {
 String generateImageAssetsClass(String path) {
   final String imageName = path.split("/").last;
   final String imageFieldName = imageName.replaceAll("-", "").split(".").first;
-  return '\nString $imageFieldName = "$imageName";\n';
+
+  return '\nString $imageFieldName = "assets/images/$imageName";\n';
 }
