@@ -34,7 +34,7 @@ class _AboutAppDialogState extends State<AboutAppDialog> {
             style: titleStyle.bold,
           ),
           SpaceY(16),
-          Text("កម្មវិធីអភិវឌ្ឍដោយដោយ: ថុង ឈុនលី"),
+          Text("កម្មវិធីអភិវឌ្ឍដោយ: ថុង ឈុនលី"),
           buildSocialButton(),
           Text("ទិន្នន័យផ្ដល់ដោយ:"),
           buildClickableLink(),
