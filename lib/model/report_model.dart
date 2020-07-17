@@ -124,7 +124,11 @@ class Nationality {
   factory Nationality.fromJson(Map<String, dynamic> json) => Nationality(
         nationality: json["nationality"] == null ? null : json["nationality"],
         cases: json["cases"] == null ? null : json["cases"],
-        recovered: json["recovered"] == null ? null : json["recovered"],
+        recovered: json["recovered"] == null
+            ? null
+            : json["recovered"] is int
+                ? json["recovered"].toString()
+                : json["recovered"],
         deaths: json["deaths"] == null ? null : json["deaths"],
       );
 
