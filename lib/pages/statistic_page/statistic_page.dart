@@ -28,35 +28,40 @@ class _StatisticPageState extends State<StatisticPage> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            headerCard(report.provinces.length),
-            Expanded(
-              child: ListView.builder(
-                itemCount: report.provinces.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final province = report.provinces[index];
-                  return ProvinceReportInfoCard(province: province);
-                },
-              ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: false,
+            backgroundColor: Colors.white,
+            floating: true,
+            snap: true,
+            expandedHeight: 100,
+            flexibleSpace: FlexibleSpaceBar(
+              background: headerCard(report.provinces.length),
             ),
-          ],
-        ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final province = report.provinces[index];
+                return ProvinceReportInfoCard(province: province);
+              },
+              childCount: report.provinces.length,
+            ),
+          ),
+        ],
       ),
     );
   }
 
   Widget headerCard(int totalProvinces) {
-    return Card(
-      margin: EdgeInsets.symmetric(vertical: 16),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          "ជំងឺកូវីដ១៩ បានរីករាយដាលនៅក្នុងប្រទេសកម្ពុជាចំនួន​ $totalProvinces ខេត្ត រាជធានី",
-          style: headerStyle.medium,
-          textAlign: TextAlign.center,
-        ),
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        "ជំងឺកូវីដ១៩ បានរីករាយដាលនៅក្នុងប្រទេសកម្ពុជាចំនួន​ $totalProvinces ខេត្ត រាជធានី",
+        style: headerStyle.medium,
+        textAlign: TextAlign.center,
       ),
     );
   }
