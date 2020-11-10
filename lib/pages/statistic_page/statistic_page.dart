@@ -1,12 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/localize_key.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/model/report_model.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:kh_covid_report/pages/report_graph_page/report_graph_page.dart';
 import 'package:kh_covid_report/pages/statistic_page/widgets/province_report_info_card.dart';
 import 'package:provider/provider.dart';
-import 'package:jin_widget_helper/jin_widget_helper.dart';
 
 class StatisticPage extends StatefulWidget {
   @override
@@ -60,7 +60,7 @@ class _StatisticPageState extends State<StatisticPage> {
       padding: const EdgeInsets.all(16.0),
       child: Text(
         "ជំងឺកូវីដ១៩ បានរីករាយដាលនៅក្នុងប្រទេសកម្ពុជាចំនួន​ $totalProvinces ខេត្ត រាជធានី",
-        style: headerStyle.medium,
+        style: headerStyle.medium.copyWith(height: 1.0),
         textAlign: TextAlign.center,
       ),
     );
