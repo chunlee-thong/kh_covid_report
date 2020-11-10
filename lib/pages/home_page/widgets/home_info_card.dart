@@ -4,6 +4,7 @@ import 'package:jin_widget_helper/jin_widget_helper.dart';
 import 'package:kh_covid_report/constant/colors.dart';
 import 'package:kh_covid_report/constant/style.dart';
 import 'package:kh_covid_report/provider/bottom_navigation_provider.dart';
+import 'package:kh_covid_report/widgets/common/custom_splash.dart';
 import 'package:provider/provider.dart';
 
 class HomeInfoCard extends StatelessWidget {
@@ -31,6 +32,7 @@ class HomeInfoCard extends StatelessWidget {
           color: isDanger ? Colors.red : null,
           margin: EdgeInsets.only(left: 12, right: 12, bottom: 16),
           child: InkWell(
+            splashFactory: InkSplash.splashFactory,
             onTap: () =>
                 Provider.of<BottomNavigationProvider>(context, listen: false)
                     .changeIndex(1),
