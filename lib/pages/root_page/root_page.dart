@@ -89,20 +89,20 @@ class _RootPageState extends State<RootPage> {
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
-                  title: Text(LocaleKeys.home).tr(),
+                  label: LocaleKeys.home.tr(),
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.assignment),
-                  title: Text(LocaleKeys.statistic).tr(),
+                  label: LocaleKeys.statistic.tr(),
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.map),
-                  title: Text(LocaleKeys.map).tr(),
+                  label: LocaleKeys.map.tr(),
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.settings),
-                  title: Text(LocaleKeys.setting).tr(),
-                )
+                  label: LocaleKeys.setting.tr(),
+                ),
               ],
             ),
           ),
